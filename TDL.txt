@@ -1,0 +1,20 @@
+Overall:
+play again, track record, leaderboard?, website?
+
+Progress:
+yahtzee - needs cleaner formatting (Scores prints None), PA, TR
+rng - guess_limit with log, TR
+blackjack - formatting: display _ of _ not ('_', '_'), no dupe cards (set), add dealer, PA, TR
+speed math challenge - 10 problems vs 20 seconds?, PA, TR
+
+Ideas:
+hangman
+wordle
+pig
+slot machines
+poker?
+
+Graphics Ideas (pygame?):
+pong
+snake
+flappy bird
