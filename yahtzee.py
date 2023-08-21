@@ -103,7 +103,7 @@ def game():
     total_score = 0
 
     for _ in range(13):
-        print("Scores: " + str(scores)) # do this better (have category)
+        print("Scores: " + str(scores))
         dice = roll_section()
         play_turn(scores, dice)
 

@@ -1,10 +1,10 @@
 # python script games
 Progress:\
-yahtzee - needs cleaner formatting, play again, track record?\
-rng - track record?
+yahtzee - needs cleaner formatting (Scores prints None), play again, track record?\
+rng - guess_limit with log, track record?\
+blackjack - formatting: display _ of _ not ('_', '_'), no dupe cards (set), add dealer, play again, track record?
 
 Ideas:\
-blackjack\
 hangman\
 wordle\
 speed math challenge\
