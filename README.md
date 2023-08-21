@@ -1,9 +1,9 @@
 # python script games
 Progress:\
-yahtzee - needs cleaner formatting
+yahtzee - needs cleaner formatting, play again, track record?\
+rng - track record?
 
 Ideas:\
-guess the number\
 blackjack\
 hangman\
 wordle\
