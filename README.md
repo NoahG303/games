@@ -2,7 +2,7 @@
 Progress:
 yahtzee - needs cleaner formatting
 
-Ideas:
+Ideas:\
 guess the number\
 blackjack\
 hangman\
@@ -11,7 +11,7 @@ speed math challenge\
 pig\
 slot machines
 
-Graphics Ideas (pygame?):
+Graphics Ideas (pygame?):\
 pong\
 snake\
 flappy bird
