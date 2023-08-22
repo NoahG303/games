@@ -1,7 +1,6 @@
 import random
-play = 'y'
 
-while play == 'y':
+def game():
     maximum = int(input("How big of a range do you want? (ex: 100) "))
     target = random.randint(1, maximum)
     
@@ -27,6 +26,12 @@ while play == 'y':
         print("You ran out of guesses. Better luck next time!")
         print("The correct number was", target)
 
-    play = input("Would you like to play again? (y/n) ")
+def main():
+    again = 'y'
+    while again == 'y':
+        game()
+        again = input("Would you like to play again? (y/n) ")
+    print("Thanks for playing!")
 
-print("Thanks for playing!")
+if __name__ == "__main__":
+    main()

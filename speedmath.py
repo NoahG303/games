@@ -14,21 +14,32 @@ def generate_problem():
     answer = eval(expr)
     return expr, answer
 
-wrong = 0
-input("Press enter to start!")
-print("---------------------")
+def game():
+    wrong = 0
+    input("Press enter to start!")
+    print("---------------------")
 
-start_time = time.time()
+    start_time = time.time()
 
-for i in range(NUM_PROBLEMS):
-    expr, answer = generate_problem()
-    guess = input("Problem #" + str(i + 1) + ": " + expr + " = ")
-    if guess != str(answer):
-        wrong += 1
+    for i in range(NUM_PROBLEMS):
+        expr, answer = generate_problem()
+        guess = input("Problem #" + str(i + 1) + ": " + expr + " = ")
+        if guess != str(answer):
+            wrong += 1
 
-end_time = time.time()
-total_time = round(end_time - start_time, 2)
+    end_time = time.time()
+    total_time = round(end_time - start_time, 2)
 
-print("---------------------")
-print("Time:", total_time, "seconds!")
-print("Score:", NUM_PROBLEMS-wrong, "/", NUM_PROBLEMS)
+    print("---------------------")
+    print("Time:", total_time, "seconds!")
+    print("Score:", NUM_PROBLEMS-wrong, "/", NUM_PROBLEMS)
+
+def main():
+    again = 'y'
+    while again == 'y':
+        game()
+        again = input("Would you like to play again? (y/n) ")
+    print("Thanks for playing!")
+
+if __name__ == "__main__":
+    main()

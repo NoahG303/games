@@ -85,11 +85,14 @@ def game():
         next = input("Hit or Stay? (h/s): ")
     if score > 22:
         print("Bust!")
-    return score
+    print("Total score: " + str(score))
 
 def main():
-    score = game()
-    print("Final score: " + str(score))
+    again = 'y'
+    while again == 'y':
+        game()
+        again = input("Would you like to play again? (y/n) ")
+    print("Thanks for playing!")
 
 if __name__ == "__main__":
     main()

@@ -112,11 +112,14 @@ def game():
     if sum(scores[:6]) >= 63:
         total_score += 35
     total_score += sum(scores)
-    return total_score
+    print("Total score: " + str(total_score))
 
 def main():
-    score = game()
-    print("Total: " + str(score))
+    again = 'y'
+    while again == 'y':
+        game()
+        again = input("Would you like to play again? (y/n) ")
+    print("Thanks for playing!")
 
 if __name__ == "__main__":
     main()
