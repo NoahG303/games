@@ -1,16 +1,17 @@
 Overall:
-play again, track record, leaderboard?, website?
+all - formatted with main --> play again, track record, player amount?
+maybe - leaderboard?, website?
 
 Progress:
-yahtzee - needs cleaner formatting (Scores prints None), PA, TR
-rng - guess_limit with log, TR
-blackjack - formatting: display _ of _ not ('_', '_'), no dupe cards (set), add dealer, PA, TR
-speed math challenge - 10 problems vs 20 seconds?, PA, TR
+yahtzee - needs cleaner formatting (Scores prints None)
+rng - guess_limit with log
+blackjack - formatting: display _ of _ not ('_', '_'), no dupe cards (set), add dealer
+speed math challenge - 10 problems vs 20 seconds?
+pig
 
 Ideas:
 hangman
 wordle
-pig
 slot machines
 poker?
 
