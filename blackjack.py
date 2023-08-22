@@ -43,8 +43,8 @@ suit_trans = {
 def draw_card():
     return (random.randint(1,13),random.randint(1,4))
 
-def display_cards(cards):
-    print("Your cards: " + str([(val_trans[card[0]], suit_trans[card[1]]) for card in cards]))
+def display_cards(player_hand):
+    print("Your cards: " + str([(val_trans[card[0]], suit_trans[card[1]]) for card in player_hand]))
 
 def calc_score(cards):
     score = 0
@@ -60,32 +60,43 @@ def calc_score(cards):
             score -= 10
     return score
 
-def display_score(score):
-    print("Your score: " + str(score))
-
 def game():
-    cards = [draw_card() for _ in range(2)]
-    display_cards(cards)
-    score = calc_score(cards)
-    display_score(score)
-    if score == 21:
+    player_hand = [draw_card() for _ in range(2)] # [(10, 1), (1, 1)] 
+    dealer_hand = [draw_card() for _ in range(2)]
+    display_cards(player_hand)
+    print("Dealer's card: " + str([(val_trans[dealer_hand[0][0]], suit_trans[dealer_hand[0][1]])]))
+    player_score = calc_score(player_hand)
+    dealer_score = calc_score(dealer_hand)
+    print("Your score: " + str(player_score))
+    if player_score == 21:
         print("Blackjack!")
-        return score
+        if dealer_score == 21:
+            print("Dealer has blackjack too. Tie!")
+        else:
+            print("You win!")
+        return
     next = input("Hit or Stay? (h/s): ")
     while next != 's':
         if next == 'h':
-            cards.append(draw_card())
-            display_cards(cards)
-            score = calc_score(cards)
-            display_score(score)
-            if score > 22:
+            player_hand.append(draw_card())
+            display_cards(player_hand)
+            player_score = calc_score(player_hand)
+            print("Your score: " + str(player_score))
+            if player_score > 22:
                 break
         else:
             print("Invalid input!")
         next = input("Hit or Stay? (h/s): ")
-    if score > 22:
+    if player_score > 22:
         print("Bust!")
-    print("Total score: " + str(score))
+        print("You lose!")
+        return
+    print("Total score: " + str(player_score))
+    # print dealer cards
+    dealer_score = calc_score(dealer_hand)
+    print("Dealer score: " + str(dealer_score))
+    # hit while < 17
+    # end game logic
 
 def main():
     again = 'y'
