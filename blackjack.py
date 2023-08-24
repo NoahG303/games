@@ -1,4 +1,5 @@
 import random
+import time
 
 val_trans = {
     1: "A",
@@ -43,8 +44,14 @@ suit_trans = {
 def draw_card():
     return (random.randint(1,13),random.randint(1,4))
 
-def display_cards(player_hand):
+def display_player_cards(player_hand):
     print("Your cards: " + str([(val_trans[card[0]], suit_trans[card[1]]) for card in player_hand]))
+
+def display_dealer_card(dealer_hand):
+    print("Dealer's card: " + str([(val_trans[dealer_hand[0][0]], suit_trans[dealer_hand[0][1]])]))
+
+def display_dealer_cards(dealer_hand):
+    print("Dealer's cards: " + str([(val_trans[card[0]], suit_trans[card[1]]) for card in dealer_hand]))
 
 def calc_score(cards):
     score = 0
@@ -61,10 +68,10 @@ def calc_score(cards):
     return score
 
 def game():
-    player_hand = [draw_card() for _ in range(2)] # [(10, 1), (1, 1)] 
+    player_hand = [draw_card() for _ in range(2)]
     dealer_hand = [draw_card() for _ in range(2)]
-    display_cards(player_hand)
-    print("Dealer's card: " + str([(val_trans[dealer_hand[0][0]], suit_trans[dealer_hand[0][1]])]))
+    display_player_cards(player_hand)
+    display_dealer_card(dealer_hand)
     player_score = calc_score(player_hand)
     dealer_score = calc_score(dealer_hand)
     print("Your score: " + str(player_score))
@@ -79,24 +86,43 @@ def game():
     while next != 's':
         if next == 'h':
             player_hand.append(draw_card())
-            display_cards(player_hand)
+            display_player_cards(player_hand)
             player_score = calc_score(player_hand)
             print("Your score: " + str(player_score))
-            if player_score > 22:
+            if player_score > 21:
                 break
         else:
             print("Invalid input!")
         next = input("Hit or Stay? (h/s): ")
-    if player_score > 22:
+    if player_score > 21:
         print("Bust!")
         print("You lose!")
         return
-    print("Total score: " + str(player_score))
-    # print dealer cards
+    print("Your final score: " + str(player_score))
+    time.sleep(2)
+    display_dealer_cards(dealer_hand)
     dealer_score = calc_score(dealer_hand)
     print("Dealer score: " + str(dealer_score))
-    # hit while < 17
-    # end game logic
+    while dealer_score < 17:
+        print("Dealer hits...")
+        time.sleep(2)
+        dealer_hand.append(draw_card())
+        display_dealer_cards(dealer_hand)
+        dealer_score = calc_score(dealer_hand)
+        print("Dealer score: " + str(dealer_score))
+        if dealer_score > 21:
+            break
+    if dealer_score > 21:
+        print("Dealer bust!")
+        print("You win!")
+        return
+    print("Dealer's final score: " + str(dealer_score))
+    if player_score > dealer_score:
+        print("You win!")
+    elif dealer_score > player_score:
+        print("You lose!")
+    else:
+        print("Tie!")
 
 def main():
     again = 'y'
