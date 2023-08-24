@@ -5,9 +5,9 @@ maybe - leaderboard?, website?, bets/$?, graphics?
 Done (?):
 pig
 yahtzee
+rng
 
 Progress:
-rng - guess_limit with log
 speed math challenge - 10 problems vs 20 seconds?, add wrong marker instantly
 blackjack - formatting: display _ of _ not ('_', '_'), no dupe cards (set), split/surrender?
 

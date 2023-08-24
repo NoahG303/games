@@ -1,10 +1,12 @@
 import random
+import math
 
 def game():
     maximum = int(input("How big of a range do you want? (ex: 100) "))
     target = random.randint(1, maximum)
-    
-    guess_limit = 10
+
+    guess_limit = math.ceil(10 + math.log2(maximum / 100)) # 10 guesses for 100, extra guess for 200 to cut in half, 1 less for 50, etc
+    print("You have", guess_limit, "guesses.")
     guess = int(input("Guess a number between 1 and " + str(maximum) + ": "))
     guess_limit -= 1
 
