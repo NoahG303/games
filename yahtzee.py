@@ -94,20 +94,33 @@ def play_turn(scores, dice):
     for index, score in enumerate(scores):
         if score == None:
             options[translations[index+1]] = calculate_score(index+1, dice)
-    print("Scoring options left: " + str(options))
+    print("\nScoring options left: " + str(options) + "\n")
     selection = input("Select an option to score: ")
     scores[translations[selection]-1] = options[selection]
+
+def display_scores(scores):
+    used = {}
+    unused = []
+    for index, score in enumerate(scores):
+        if score == None:
+            unused.append(translations[index+1])
+        else:
+            used[translations[index+1]] = scores[index]
+    if used:
+        print("\nOptions used:", used)
+    if unused:
+        print("\nOptions remaining:", unused, "\n")
 
 def game():
     scores = [None] * 13
     total_score = 0
 
     for _ in range(13):
-        print("Scores: " + str(scores))
+        display_scores(scores)
         dice = roll_section()
         play_turn(scores, dice)
 
-    print("Final Scores: " + str(scores))
+    print("\nFinal Scores: " + str(scores))
 
     if sum(scores[:6]) >= 63:
         total_score += 35
@@ -118,7 +131,7 @@ def main():
     again = 'y'
     while again == 'y':
         game()
-        again = input("Would you like to play again? (y/n) ")
+        again = input("\nWould you like to play again? (y/n) ")
     print("Thanks for playing!")
 
 if __name__ == "__main__":

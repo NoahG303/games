@@ -2,12 +2,14 @@ Overall:
 all - formatted with main the same --> track record, player amount?, rules for reference, input validation?
 maybe - leaderboard?, website?, bets/$?, graphics?
 
+Done (?):
+pig
+yahtzee
+
 Progress:
-blackjack - formatting: display _ of _ not ('_', '_'), no dupe cards (set), split/surrender?
 rng - guess_limit with log
 speed math challenge - 10 problems vs 20 seconds?, add wrong marker instantly
-yahtzee - needs cleaner formatting (Scores prints None)
-pig
+blackjack - formatting: display _ of _ not ('_', '_'), no dupe cards (set), split/surrender?
 
 Ideas:
 hangman
