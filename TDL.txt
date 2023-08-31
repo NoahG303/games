@@ -18,6 +18,7 @@ slot machines
 poker?
 
 Graphics Ideas (pygame?):
+cube block (apps)
 pong
 snake
 flappy bird
