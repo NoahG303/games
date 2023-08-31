@@ -8,11 +8,11 @@ yahtzee
 rng
 
 Progress:
-speed math challenge - 10 problems vs 20 seconds?, add wrong marker instantly
-blackjack - formatting: display _ of _ not ('_', '_'), no dupe cards (set), split/surrender?
+speed math challenge - 10 problems vs 20 seconds?, add wrong marker instantly (pick amt/speed, pick val, pass param to game())
+blackjack - formatting: display _ of _ not ('_', '_'), no dupe cards (set of all), split/surrender?
 
 Ideas:
-hangman
+hangman - what was the word if ur wrong, several lists to pick category from?
 wordle
 slot machines
 poker?
